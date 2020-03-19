@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 def graph_population():
     df = pd.read_csv('Data/population.csv', delimiter=",")
 
+
     # Checking for nulls
     print(df.isnull().sum().sum())
 
