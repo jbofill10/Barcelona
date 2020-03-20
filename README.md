@@ -24,3 +24,8 @@ This first graph depicts the total population count per year.
 Quite obviously, the population within Barcelona is increasing.. quite quickly as well.
 
 ![alt text](https://github.com/jbofill10/Barcelona/blob/master/Population%20Graphs/YearlyPop.png)
+
+
+# Trends
+Looking at the accidents csv, I found a quadratic like trend between injuries during certain parts of the day
+![alt text](https://github.com/jbofill10/Barcelona/blob/master/Population%20Graphs/AccidentTrends.png)
