@@ -1,9 +1,9 @@
 import pandas as pd
 import seaborn as sb
 import matplotlib.pyplot as plt
+import predictions.accident_during_time_of_day as time_of_day_accidents
 
 '''Trying to find trends within the data set'''
-
 
 def trends():
     # Read CSV
@@ -17,7 +17,7 @@ def trends():
     days_injuries_df = pd.DataFrame(days_injuries)
 
     # Reindex the rows because pandas sorts rows by string order
-    days_injuries_df=days_injuries_df.reindex(['Morning','Afternoon','Night'])
+    days_injuries_df = days_injuries_df.reindex(['Morning', 'Afternoon', 'Night'])
 
     # Plot dimensions
     plt.figure(figsize=(10, 8))
@@ -27,7 +27,7 @@ def trends():
 
     # Quadratic best fit since trend looked quadratic
     sb.regplot(range(3), [i[0] for i in days_injuries_df.values],
-               order=2, ci=None, scatter_kws={"s": 30}, color='orange', line_kws={'linestyle': '--'})
+               order=5, ci=None, scatter_kws={"s": 30}, color='orange', line_kws={'linestyle': '--'})
 
     sb.set_style('dark')
     plt.title('Accident Count Respective to the Part of the Day')
@@ -35,3 +35,5 @@ def trends():
     plt.savefig('./Population Graphs/AccidentTrends')
 
     plt.show()
+
+    time_of_day_accidents.make_prediction(df)
